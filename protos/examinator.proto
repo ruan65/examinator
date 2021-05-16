@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service Examinator {
+
+	rpc getQuestion(Empty) returns (Question) {}
+
+}
+
+
+message Question {
+	int32 id = 1;
+	string text = 2;
+}
+
+message Answer {
+	int32 id = 1;
+	Question question = 2;
+	string text = 3;
+}
+
+message Empty {}
